@@ -1,12 +1,9 @@
 import { SearchX } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export function EmptyState({ searchQuery }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="flex flex-col items-center justify-center"
+    <div
+      className="flex flex-col items-center justify-center skill-card"
       style={{ 
         padding: 'clamp(3rem, 8vw, 5rem) clamp(1rem, 3vw, 1.5rem)'
       }}
@@ -40,6 +37,6 @@ export function EmptyState({ searchQuery }) {
           ? `No skills match "${searchQuery}". Try different keywords or clear your search.`
           : 'No skills match your current filters. Try adjusting your category selection.'}
       </p>
-    </motion.div>
+    </div>
   );
 }

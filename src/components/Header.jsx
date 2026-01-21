@@ -1,7 +1,6 @@
 import { Sparkles } from 'lucide-react';
 import { SearchBar } from './SearchBar';
 import { ThemeToggle } from './ThemeToggle';
-import { motion } from 'framer-motion';
 
 export function Header({ searchValue, onSearchChange, onSearchClear }) {
   return (
@@ -10,10 +9,8 @@ export function Header({ searchValue, onSearchChange, onSearchClear }) {
       style={{ borderColor: 'var(--border)' }}
     >
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-col items-center"
+        <div
+          className="flex flex-col items-center skill-card"
           style={{ gap: 'clamp(1.5rem, 4vw, 2.5rem)' }}
         >
           {/* Logo and Title */}
@@ -54,7 +51,7 @@ export function Header({ searchValue, onSearchChange, onSearchClear }) {
               onClear={onSearchClear}
             />
           </div>
-        </motion.div>
+        </div>
       </div>
       
       {/* Theme Toggle - Fixed Position */}

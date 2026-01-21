@@ -1,5 +1,22 @@
-import { motion } from 'framer-motion';
-import * as Icons from 'lucide-react';
+import { 
+  Shield, Layout, Server, Brain, Cloud, 
+  TrendingUp, Database, Smartphone, CheckSquare, Gamepad2, Folder 
+} from 'lucide-react';
+
+// Icon map - only imports the icons we need
+const iconMap = {
+  Shield,
+  Layout,
+  Server,
+  Brain,
+  Cloud,
+  TrendingUp,
+  Database,
+  Smartphone,
+  CheckSquare,
+  Gamepad2,
+  Folder
+};
 
 export function CategoryFilter({ categories, selectedCategories, onToggleCategory, skillCounts }) {
   const allSelected = selectedCategories.length === 0;
@@ -18,9 +35,9 @@ export function CategoryFilter({ categories, selectedCategories, onToggleCategor
           style={{ gap: 'clamp(0.5rem, 1.5vw, 0.75rem)' }}
         >
           {/* All button */}
-          <motion.button
+          <button
             onClick={() => onToggleCategory(null)}
-            className="rounded-full whitespace-nowrap transition-all border-2 flex items-center font-medium"
+            className="category-btn rounded-full whitespace-nowrap border-2 flex items-center font-medium"
             style={{
               backgroundColor: allSelected ? 'var(--accent-primary)' : 'var(--bg-surface)',
               borderColor: allSelected ? 'var(--accent-primary)' : 'var(--border)',
@@ -29,24 +46,22 @@ export function CategoryFilter({ categories, selectedCategories, onToggleCategor
               fontSize: 'clamp(0.75rem, 1.3vw, 0.875rem)',
               gap: 'clamp(0.25rem, 0.5vw, 0.5rem)'
             }}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
           >
             <span>All</span>
             <span style={{ opacity: 0.8 }}>({skillCounts.total})</span>
-          </motion.button>
+          </button>
           
           {/* Category buttons */}
           {categories.map((category) => {
             const isSelected = selectedCategories.includes(category.id);
-            const Icon = Icons[category.icon] || Icons.Folder;
+            const Icon = iconMap[category.icon] || Folder;
             const count = skillCounts[category.id] || 0;
             
             return (
-              <motion.button
+              <button
                 key={category.id}
                 onClick={() => onToggleCategory(category.id)}
-                className="rounded-full whitespace-nowrap transition-all border-2 flex items-center font-medium"
+                className="category-btn rounded-full whitespace-nowrap border-2 flex items-center font-medium"
                 style={{
                   backgroundColor: isSelected ? category.color : 'var(--bg-surface)',
                   borderColor: isSelected ? category.color : 'var(--border)',
@@ -55,13 +70,11 @@ export function CategoryFilter({ categories, selectedCategories, onToggleCategor
                   fontSize: 'clamp(0.75rem, 1.3vw, 0.875rem)',
                   gap: 'clamp(0.25rem, 0.5vw, 0.5rem)'
                 }}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
               >
                 <Icon style={{ width: 'clamp(0.875rem, 1.5vw, 1rem)', height: 'clamp(0.875rem, 1.5vw, 1rem)' }} />
                 <span>{category.name}</span>
                 <span style={{ opacity: 0.8 }}>({count})</span>
-              </motion.button>
+              </button>
             );
           })}
         </div>

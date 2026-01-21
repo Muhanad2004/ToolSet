@@ -1,227 +1,163 @@
-# 🌟 OpenCode Skills Directory
+# OpenCode Skills Directory
 
-A beautiful, interactive catalog of 100+ AI coding skills with smooth animations, intelligent search, category filtering, and a delightful user experience.
+A personal documentation hub for AI coding skills used with OpenCode. This directory catalogs 110+ skills across 10 categories, serving as a quick reference for prompts, capabilities, and related techniques I use in my development workflow.
 
-[![Deploy to GitHub Pages](https://github.com/Muhanad2004/ToolSet/actions/workflows/deploy.yml/badge.svg)](https://github.com/Muhanad2004/ToolSet/actions/workflows/deploy.yml)
+**Live:** [muhanad2004.github.io/ToolSet](https://muhanad2004.github.io/ToolSet/)
 
-## ✨ Features
+## Purpose
 
-- **100+ Skills** - Comprehensive catalog of AI coding capabilities across 10 categories
-- **Smart Search** - Fuzzy search across names, descriptions, tags, and example prompts
-- **Category Filtering** - Multi-select category filters with skill counts
-- **Expandable Cards** - Click to reveal full descriptions, example prompts, and related skills
-- **Copy Prompts** - One-click copy of example prompts to clipboard
-- **Dark/Light Theme** - Toggle between themes with localStorage persistence
-- **Keyboard Shortcuts** - `/` to focus search, `Esc` to clear
-- **Smooth Animations** - Delightful Framer Motion animations throughout
-- **Responsive Design** - Works beautifully on all screen sizes
-- **Related Skills** - Discover connected skills easily
+When working with OpenCode, I frequently use various skills for different tasks—security testing, frontend development, API design, AI agents, and more. This directory:
 
-## 🎨 Design
+- **Documents every skill** I've used or plan to use
+- **Stores example prompts** that I can copy and reuse
+- **Maps relationships** between related skills
+- **Organizes by category** for quick discovery
+- **Provides a searchable interface** to find the right skill fast
 
-Built with the **Electric Violet** theme featuring:
-- Deep space backgrounds
-- Violet and cyan accent colors
-- Category-specific color coding
-- Glassmorphism effects
-- Smooth transitions and micro-interactions
+Instead of remembering exact prompt syntax or digging through chat history, I open this directory, search for what I need, and copy the prompt directly.
 
-## 🚀 Tech Stack
+## How I Use It
 
-- **React 19** - Modern React with hooks
-- **Vite 7** - Lightning-fast build tool
-- **Tailwind CSS 4** - CSS-first utility framework
-- **Framer Motion 12** - Production-ready animation library
-- **Lucide React** - Beautiful icon library
-- **GitHub Pages** - Automatic deployment
+1. **Quick Reference** — Search for a skill by name or keyword to see what it does and how to invoke it
+2. **Prompt Templates** — Each skill has example prompts I can copy with one click
+3. **Discovery** — Browse categories to find skills I might not know about
+4. **Documentation** — Full descriptions explain when and why to use each skill
+5. **Relationships** — Related skills help me find complementary techniques
 
-## 🏃 Quick Start
+## Features
 
-### Prerequisites
+| Feature | Description |
+|---------|-------------|
+| **110+ Skills** | Comprehensive catalog across security, frontend, backend, AI, DevOps, marketing, and more |
+| **Instant Search** | Fuzzy search across names, descriptions, tags, and prompts |
+| **Category Filter** | Single-click filtering by category |
+| **Expandable Cards** | Click to reveal full details, prompts, and related skills |
+| **Copy to Clipboard** | One-click copy of any example prompt |
+| **Dark/Light Theme** | Toggle with persistence |
+| **Keyboard Shortcuts** | `/` to search, `Esc` to clear |
+| **Blazing Fast** | Pure CSS animations, no heavy dependencies |
 
-- Node.js 20 or higher
-- npm or yarn
+## Tech Stack
 
-### Installation
+- **React 19** — Modern hooks-based components
+- **Vite 7** — Sub-second hot reload
+- **Vanilla CSS** — Custom properties for theming, CSS animations
+- **Lucide React** — Lightweight icons (only imports what's needed)
+- **GitHub Pages** — Automatic deployment on push
+
+## Performance
+
+Optimized for instant loading:
+
+| Metric | Value |
+|--------|-------|
+| Main JS Bundle | 272 kB |
+| CSS | 6 kB |
+| Initial Load | < 500ms |
+| Card Rendering | Instant |
+
+No heavy animation libraries. Pure CSS transitions for smooth interactions without the overhead.
+
+## Local Development
 
 ```bash
-# Clone the repository
+# Clone
 git clone https://github.com/Muhanad2004/ToolSet.git
-
-# Navigate to the project directory
 cd ToolSet
 
-# Install dependencies
+# Install
 npm install
 
-# Start the development server
+# Dev server
 npm run dev
-```
 
-The application will be available at `http://localhost:5173`
-
-## 📦 Building for Production
-
-```bash
-# Create a production build
+# Build
 npm run build
-
-# Preview the production build locally
-npm run preview
 ```
 
-The built files will be in the `dist` directory.
-
-## 🌐 Deployment
-
-This project is automatically deployed to GitHub Pages when you push to the `main` branch.
-
-### Manual Deployment
-
-If you need to deploy manually:
-
-```bash
-# Build the project
-npm run build
-
-# The dist folder is ready to be deployed
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
-ToolSet/
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          # GitHub Actions workflow
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx          # Header with search
-│   │   ├── ThemeToggle.jsx     # Dark/light toggle
-│   │   ├── SearchBar.jsx       # Debounced search input
-│   │   ├── CategoryFilter.jsx  # Category filter pills
-│   │   ├── StatsBar.jsx        # Stats display
-│   │   ├── SkillGrid.jsx       # Grid with animations
-│   │   ├── SkillCard.jsx       # Expandable skill card
-│   │   ├── CopyButton.jsx      # Copy with feedback
-│   │   ├── RelatedSkills.jsx   # Related skill badges
-│   │   ├── EmptyState.jsx      # No results message
-│   │   └── Footer.jsx          # Footer component
-│   ├── data/
-│   │   ├── skills.js           # All skills data
-│   │   └── categories.js       # Category metadata
-│   ├── hooks/
-│   │   ├── useTheme.js         # Theme hook
-│   │   └── useKeyboardNav.js   # Keyboard shortcuts
-│   ├── utils/
-│   │   ├── search.js           # Search algorithm
-│   │   └── animations.js       # Animation variants
-│   ├── App.jsx                 # Main app component
-│   ├── main.jsx                # React entry point
-│   └── index.css               # Global styles + Tailwind
-├── index.html
-├── vite.config.js              # Vite configuration
-└── package.json
+src/
+├── components/          # UI components
+│   ├── Header.jsx       # Title, search bar, theme toggle
+│   ├── CategoryFilter.jsx
+│   ├── SkillGrid.jsx
+│   ├── SkillCard.jsx    # Expandable card with prompts
+│   └── ...
+├── data/
+│   ├── skills.js        # All 110+ skills
+│   └── categories.js    # 10 category definitions
+├── hooks/
+│   ├── useTheme.js      # Dark/light persistence
+│   └── useKeyboardNav.js
+├── utils/
+│   └── search.js        # Weighted fuzzy search
+├── App.jsx
+└── index.css            # CSS custom properties + animations
 ```
 
-## 🎯 Skills Categories
+## Adding Skills
 
-1. **🔐 Security & Pentesting** (30 skills) - SQL Injection, XSS, Metasploit, etc.
-2. **⚛️ Frontend Development** (25 skills) - React, Next.js, Tailwind, UI/UX, etc.
-3. **⚙️ Backend & APIs** (20 skills) - Node.js, GraphQL, Prisma, etc.
-4. **🤖 AI & Agents** (22 skills) - LangGraph, RAG, CrewAI, etc.
-5. **☁️ DevOps & Cloud** (15 skills) - AWS, Docker, GitHub Actions, etc.
-6. **📈 Marketing & Growth** (18 skills) - SEO, CRO, Copywriting, etc.
-7. **💾 Database & Data** (10 skills) - Prisma, PostgreSQL, etc.
-8. **📱 Mobile Development** (8 skills) - React Native, Mobile Design, etc.
-9. **📋 Productivity & Planning** (12 skills) - TDD, Planning, etc.
-10. **🎮 Game Development** (10 skills) - 2D/3D games, etc.
-
-## 🔍 Search Features
-
-The search algorithm uses weighted scoring:
-- **Name matching** (weight: 10) - Highest priority
-- **Tags** (weight: 7) - Important keywords
-- **Keywords** (weight: 6) - Related terms
-- **Short description** (weight: 5) - Overview text
-- **Category** (weight: 4) - Category names
-- **Example prompts** (weight: 3) - Usage examples
-
-Search supports:
-- **Fuzzy matching** - Typo tolerance
-- **Multi-word queries** - All terms must match
-- **Partial matching** - "sql" matches "SQLMap", "MySQL"
-- **Real-time filtering** - Instant results as you type
-
-## ⌨️ Keyboard Shortcuts
-
-- `/` - Focus search input
-- `Esc` - Clear search and unfocus
-- `Tab` - Navigate between interactive elements
-
-## 🎨 Adding New Skills
-
-To add a new skill, edit `src/data/skills.js`:
+Edit `src/data/skills.js`:
 
 ```javascript
 {
-  id: 'my-new-skill',
-  name: 'My New Skill',
-  shortDescription: 'Brief description (50-80 chars)',
-  fullDescription: 'Detailed description (200-300 chars)',
-  category: 'Frontend Development', // Must match category name
-  tags: ['tag1', 'tag2', 'tag3'],
+  id: 'skill-id',
+  name: 'Skill Name',
+  shortDescription: 'Brief overview',
+  fullDescription: 'Detailed explanation of when and how to use this skill',
+  category: 'Category Name',  // Must match a category in categories.js
+  tags: ['tag1', 'tag2'],
   examplePrompts: [
-    'Example prompt 1',
-    'Example prompt 2',
-    'Example prompt 3'
+    'First example prompt to copy',
+    'Second example prompt'
   ],
-  relatedSkills: ['skill-id-1', 'skill-id-2'],
-  keywords: ['keyword1', 'keyword2']
+  relatedSkills: ['other-skill-id'],
+  keywords: ['search', 'terms']
 }
 ```
 
-## 🛠️ Configuration
+## Categories
 
-### Changing the GitHub Pages Base Path
+| Category | Skills | Focus |
+|----------|--------|-------|
+| Security & Pentesting | 30 | SQL injection, XSS, Metasploit, Burp Suite |
+| Frontend Development | 25 | React, Next.js, Tailwind, UI/UX patterns |
+| Backend & APIs | 20 | Node.js, GraphQL, Prisma, authentication |
+| AI & Agents | 22 | LangGraph, RAG, CrewAI, prompt engineering |
+| DevOps & Cloud | 15 | AWS, Docker, CI/CD, deployment |
+| Marketing & Growth | 18 | SEO, CRO, copywriting, analytics |
+| Database & Data | 10 | PostgreSQL, schema design, migrations |
+| Mobile Development | 8 | React Native, mobile patterns |
+| Productivity & Planning | 12 | TDD, planning, documentation |
+| Game Development | 10 | 2D/3D games, game design |
 
-Edit `vite.config.js`:
+## Search Algorithm
 
-```javascript
-export default defineConfig({
-  // ... other config
-  base: '/your-repo-name/', // Change this to your repository name
-});
-```
+Weighted scoring across multiple fields:
 
-### Customizing Colors
+- **Name** (10x) — Highest priority
+- **Tags** (7x) — Key descriptors
+- **Keywords** (6x) — Related terms
+- **Description** (5x) — Overview text
+- **Category** (4x) — Category name
+- **Prompts** (3x) — Example text
 
-Edit `src/index.css` to modify the theme colors:
+Supports fuzzy matching, partial matches, and multi-word queries.
 
-```css
-@theme {
-  --color-accent-primary: #8b5cf6;  /* Electric violet */
-  --color-accent-secondary: #06b6d4; /* Cyan */
-  /* ... other colors */
-}
-```
+## Deployment
 
-## 📄 License
+Pushes to `main` trigger automatic deployment via GitHub Actions:
 
-MIT License - feel free to use this project however you'd like!
+1. Builds with Vite
+2. Deploys `dist/` to GitHub Pages
+3. Live at [muhanad2004.github.io/ToolSet](https://muhanad2004.github.io/ToolSet/)
 
-## 🙏 Acknowledgments
+## License
 
-- Built with ❤️ by OpenCode
-- Design inspired by modern web aesthetics
-- Icons from [Lucide](https://lucide.dev/)
-- Animations powered by [Framer Motion](https://www.framer.com/motion/)
-
-## 📞 Contact
-
-- GitHub: [@Muhanad2004](https://github.com/Muhanad2004)
-- Repository: [ToolSet](https://github.com/Muhanad2004/ToolSet)
+MIT
 
 ---
 
-**Enjoy exploring the OpenCode Skills Directory!** 🚀✨
+Built to make working with OpenCode faster and more effective.

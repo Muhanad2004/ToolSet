@@ -1,11 +1,7 @@
-import { motion } from 'framer-motion';
-
 export function StatsBar({ totalSkills, categories, selectedCategories }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="border-b"
+    <div
+      className="border-b skill-card"
       style={{ 
         borderColor: 'var(--border)',
         padding: 'clamp(1rem, 3vw, 1.5rem) 0'
@@ -52,6 +48,6 @@ export function StatsBar({ totalSkills, categories, selectedCategories }) {
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
